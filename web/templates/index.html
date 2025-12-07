@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adolff the Baker Bear</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+  <!-- ESTO ES LO QUE CAMBIÉ – RUTAS DIRECTAS (FUNCIONA SIEMPRE) -->
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="bg-black text-white min-h-screen relative overflow-x-hidden">
+
+  <!-- Lluvia de galletas + llamas -->
+  <div class="cookies-rain fixed inset-0 pointer-events-none z-10"></div>
+  <div class="flames fixed bottom-0 left-0 w-full h-96 pointer-events-none z-10"></div>
+
+  <div class="relative z-20">
+
+    <!-- HERO + BOTÓN GIGANTE -->
+    <section class="flex flex-col items-center justify-start pt-8 md:pt-12 min-h-screen">
+      <div class="text-center">
+
+        <h1 class="text-6xl md:text-9xl lg:text-[10rem] fredoka leading-none drop-shadow-2xl">
+          <span class="text-yellow-400">ADOLFF</span><br>
+          <span class="text-amber-400">BAKER</span> BEAR
+        </h1>
+
+        <!-- BOTÓN BUY NOW BRUTAL -->
+        <div class="mt-12 md:mt-16">
+          <a href="https://raydium.io/swap/?inputMint=sol&outputMint=YOUR_CONTRACT_AQUI" 
+             target="_blank"
+             class="group relative inline-block">
+
+            <div class="bg-gradient-to-r from-amber-500 to-orange-500 
+                        hover:from-amber-400 hover:to-orange-400 
+                        text-black font-black text-6xl md:text-8xl lg:text-9xl 
+                        px-16 py-12 md:py-16 lg:py-20 
+                        rounded-3xl shadow-2xl 
+                        transform transition-all duration-300 
+                        group-hover:scale-110 group-hover:-translate-y-4 
+                        border-8 border-amber-700">
+              BUY NOW
+            </div>
+
+            <div class="absolute inset-x-0 bottom-0 h-16 bg-orange-600 blur-3xl opacity-70 
+                        group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
+              <div class="cookie-particle"></div>
+              <div class="cookie-particle delay-200"></div>
+              <div class="cookie-particle delay-400"></div>
+              <div class="cookie-particle delay-600"></div>
+            </div>
+          </a>
+        </div>
+
+        <div class="mt-20 text-5xl md:text-7xl fredoka text-orange-400" id="countdown"></div>
+      </div>
+    </section>
+
+    <!-- OVEN PROGRESS -->
+    <section class="py-32">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-6xl md:text-8xl fredoka mb-16 text-amber-400">OVEN PROGRESS</h2>
+        <div class="relative bg-gray-900 rounded-full h-32 overflow-hidden shadow-2xl border-8 border-amber-600">
+          <div id="main-bar" class="h-full w-0 bg-gradient-to-r from-orange-600 to-amber-400 flex items-center justify-center text-5xl md:text-8xl fredoka text-black font-bold transition-all duration-1000">
+            0%
+          </div>
+        </div>
+        <p class="mt-12 text-4xl md:text-6xl fredoka">
+          <span id="current-cookies">0</span> / 6,000,000 cookies baked
+        </p>
+      </div>
+    </section>
+
+    <!-- OVEN LEVELS -->
+    <section class="py-32 bg-black bg-opacity-70">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-6xl md:text-8xl fredoka text-center mb-20 text-amber-300">OVEN LEVELS</h2>
+        <div id="oven-levels-container" class="relative flex justify-between items-center flex-wrap gap-12"></div>
+        <p id="current-oven-status" class="text-center mt-20 text-4xl fredoka text-amber-300">
+          Current oven: <span class="text-6xl text-orange-400">Level 1</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="py-24 text-center">
+      <p class="text-5xl fredoka text-amber-300">1% goes to oven development</p>
+      <p class="text-9xl mt-8">FIRE COOKIE FIRE</p>
+    </section>
+
+    <footer class="py-16 text-center text-4xl bg-black bg-opacity-90 fredoka text-amber-400">
+      Adolff Baker Bear 2025<br>
+      <span class="text-2xl text-white">Pure cookie chaos. No financial advice.</span>
+    </footer>
+  </div>
+
+  <!-- SCRIPT DIRECTO – SIN url_for -->
+  <script src="/static/script.js"></script>
+</body>
+</html>
